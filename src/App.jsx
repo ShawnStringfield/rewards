@@ -4,8 +4,6 @@ import moment from 'moment';
 
 function App() {
   let monthlyTotal;
-  let completeTotal;
-
 
   const getTransactions = () => {
     return createTransactions().map((transaction, index) => {
@@ -18,7 +16,6 @@ function App() {
           <h1>{name}</h1>
           {months.map((heading, index) => {
             monthlyTotal = [];
-            completeTotal = [];
 
             return (
               <div key={index}>
@@ -34,7 +31,6 @@ function App() {
                       : 0;
 
                   monthlyTotal.push(points);
-                  completeTotal.push(monthlyTotal);
                   return (
                     <div key={index}>
                       <span>{moment(item.date).format("LL")} | </span>
